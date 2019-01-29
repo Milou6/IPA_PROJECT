@@ -1,0 +1,105 @@
+table {
+	table-layout: fixed;
+
+	
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+button.sign {
+	font-size: 25px;
+	margin-right: none;
+	border-right: none;
+	float: left;
+
+}
+
+button.selected {
+	font-size: 25px;
+	margin-right: 10px;
+	border-right: 10px;
+	float: left;
+
+}
+
+#selectedFeatures {
+	font-size: 25px;
+	border-color: blue;
+	border-style: solid;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+
+td.rightErased {
+	border-right: none;
+	text-align: right;
+	
+}
+
+td.leftErased {
+	border-left: none;
+	text-align: left;
+}
+
+th {
+	
+	font-size: 15px;
+	word-wrap:break-word;
+	white-space: normal;
+}
+
+th.test {
+	width:1px;
+	
+}
+
+td.grey {
+	background-color: #cccccc;
+	
+}
+
+
+
+.featureGroup {
+	display: flex;
+	
+}
+
+
+
+
+
+#trapezium {
+	height: 250px;
+	width: 400px;
+	position: absolute;
+	top: 360px;
+	left: 750px;
+}
+
+#vowelsTable {
+	border: none;
+
+	height: 250px;
+	width: 400px;
+	position: absolute;
+	top: 360px;
+	left: 750px;
+}
+
+td.noBorders {
+	
+	border: none;
+	
+}
