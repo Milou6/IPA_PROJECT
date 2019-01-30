@@ -10,20 +10,19 @@ table, th, td {
 	text-align: center;
 }
 
-button.sign {
+#selectedFeatures button {
 	font-size: 25px;
-	margin-right: none;
-	border-right: none;
 	float: left;
-
 }
 
-button.selected {
-	font-size: 25px;
+#selectedFeatures button.sign {
+	margin-right: none;
+	border-right: none;
+}
+
+#selectedFeatures button.feature {
 	margin-right: 10px;
 	border-right: 10px;
-	float: left;
-
 }
 
 #selectedFeatures {
@@ -82,6 +81,10 @@ td.grey {
 
 .featureGroup .featurePair button {
     float: left;
+}
+
+#selectedFeatures .featurePair {
+    display: none;
 }
 
 

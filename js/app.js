@@ -1,72 +1,30 @@
-var toAdd = [];
+/**
+ * Switches the sign of a feature pair
+ *
+ * @param pair      The DOM reference to the feature pair element
+ * @param selected  True if the feature is currently selected, and false otherwise
+ */
+function switchSign(pair, selected) {
+  let button = pair.children[0];
+  let otherSymbol = button.firstChild.data === "+" ? "-" : "+";
+  let group = selected ? 'unselectedFeatures' : 'selectedFeatures';
+  let otherPair = document.querySelector(`#${group} [data-value='${pair.dataset.value}']`);
 
-function addFeature(featureId) {													//TO REMOVE...............................................
-
-
-  if (document.getElementById("sign" + featureId).firstChild.data === "+") {
-    toAdd.push(featuresObject["plus" +featureId]);
-  }
-  else {
-    toAdd.push(featuresObject["minus" +featureId]);
-  }
-
-
-  //			console.log(toAdd);	
+  button.firstChild.data = otherSymbol;
+  otherPair.children[0].firstChild.data = otherSymbol;
 }
 
-function switchSign(buttonId) {
-  var currentText = document.getElementById(buttonId);
-  //			console.log(currentText);
-  //			console.log("selectedS" + buttonId.slice(1));
-
-
-  if (buttonId.indexOf("selected") === -1) {
-    if (currentText.firstChild.data === "+") {
-      currentText.firstChild.data = "-";
-      document.getElementById("selectedS" + buttonId.slice(1)).firstChild.data = "-";
-    }
-    else {
-      currentText.firstChild.data = "+";
-      document.getElementById("selectedS" + buttonId.slice(1)).firstChild.data = "+";
-    }
-  }
-  else {
-    if (currentText.firstChild.data === "+") {
-      currentText.firstChild.data = "-";
-      document.getElementById("s" + buttonId.slice(9)).firstChild.data = "-";
-    }
-    else {
-      currentText.firstChild.data = "+";
-      document.getElementById("s" + buttonId.slice(9)).firstChild.data = "+";
-    }
-  }
-}
-
-function moveButton(buttonId) {
-  //			document.getElementById(buttonId).style.display = 'none';
-  //			document.getElementById("sign" + buttonId).style.display = 'none';
-  //			document.getElementById("selected" + buttonId).style.display = '';
-  //			document.getElementById("selectedSign" + buttonId).style.display = 'none'; 
-
-
-  if (buttonId.indexOf("selected") === -1) {
-    document.getElementById(buttonId).style.display = 'none';
-    document.getElementById("sign" + buttonId).style.display = 'none';
-    document.getElementById("selected" + buttonId).style.display = '';
-    document.getElementById("selectedSign" + buttonId).style.display = '';
-  }
-
-  else {
-    //				document.getElementById(buttonId).style.display = '';
-    //				document.getElementById("sign" + buttonId).style.display = '';
-    //				document.getElementById("selected" + buttonId).style.display = 'none';
-    //				document.getElementById("selectedSign" + buttonId).style.display = 'none';
-
-    document.getElementById(buttonId).style.display = 'none';
-    document.getElementById(buttonId.replace("selected", "selectedSign")).style.display = 'none';
-    document.getElementById(buttonId.slice(8)).style.display = '';
-    document.getElementById("sign" + buttonId.slice(8)).style.display = '';
-  }
+/**
+ * "Moves" a button from the unselected region to the selected region
+ *
+ * @param pair      The DOM reference to the feature pair element
+ * @param selected  True if the feature is currently selected, and false otherwise
+ */
+function moveButton(pair, selected) {
+  let group = selected ? 'unselectedFeatures' : 'selectedFeatures';
+  let otherPair = document.querySelector(`#${group} [data-value='${pair.dataset.value}']`);
+  pair.style.display = 'none';
+  otherPair.style.display = 'initial';
 }
 
 /**
@@ -75,25 +33,25 @@ function moveButton(buttonId) {
  * @return  An array of names of active features
  */
 function parseActiveFeatures() {
-  var elements = document.getElementById("selectedFeatures").elements;
+  let pairs = document.querySelectorAll("#selectedFeatures .featurePair");
   let activeFeatures = [];
 
-  for (let i = 0; i < elements.length; i += 2) {
-    let sign = elements[i];
-    let feature = elements[i+1];
+  for (let pair of pairs) {
+    let sign = pair.children[0];
+    let feature = pair.children[1];
     let signText = "";
 
-    if (window.getComputedStyle(feature).display === "none") {
+    if (window.getComputedStyle(pair).display === "none") {
       continue;
     }
 
-    if (sign.firstChild.data === "+") {
+    if (sign.innerHTML === "+") {
       signText = "plus";
-    } else if (sign.firstChild.data === "-") {
+    } else if (sign.innerHTML === "-") {
       signText = "minus";
     }
 
-    activeFeatures.push(signText + feature.value);
+    activeFeatures.push(signText + pair.dataset.value);
   }
 
   return activeFeatures;
@@ -143,12 +101,13 @@ function updateTable() {
 function setLanguage(lang) {
   // The cells of the feature tables
   let cells = document.querySelectorAll('#tableDisplay th');
-  // The feature buttons
-  let buttons = document.querySelectorAll('#unselectedFeatures button, #selectedFeatures button');
+  // The feature pairs
+  let pairs = document.querySelectorAll('#unselectedFeatures .featurePair, #selectedFeatures .featurePair');
 
-  for (let button of buttons) {
-    if (dictionary[lang].hasOwnProperty(button.value)) {
-      button.firstChild.data = dictionary[lang][button.value];
+  for (let pair of pairs) {
+    if (dictionary[lang].hasOwnProperty(pair.dataset.value)) {
+      let button = pair.children[1];
+      button.firstChild.data = dictionary[lang][pair.dataset.value];
     }
   }
 
@@ -177,42 +136,46 @@ function changeLanguage() {
   setLanguage(lang);
 }
 
+/**
+ * Attaches event listeners to all of the unselected features
+ */
 function armUnselectedFeatures() {
-  let pairs = document.getElementsByClassName('featurePair');
+  let pairs = document.querySelectorAll('#unselectedFeatures .featurePair');
 
   for (let pair of pairs) {
     let [signEl, featureEl] = pair.children;
 
-    signEl.addEventListener('click', () => switchSign(signEl.id));
+    signEl.addEventListener('click', () => switchSign(pair, false));
 
     featureEl.addEventListener('click', () => {
-      moveButton(featureEl.id);
-      addFeature(featureEl.id);
+      moveButton(pair, false);
       updateTable();
     });
   }
 }
 
+/**
+ * Attaches event listeners to all of the selected features
+ */
 function armSelectedFeatures() {
-  let signEls = document.querySelectorAll('#selectedFeatures .sign');
-  let featureEls = document.querySelectorAll('#selectedFeatures .selected');
+  let pairs = document.querySelectorAll('#selectedFeatures .featurePair');
 
-  for (let signEl of signEls) {
+  for (let pair of pairs) {
+    let [signEl, featureEl] = pair.children;
+
     signEl.addEventListener('click', () => {
-      switchSign(signEl.id);
+      switchSign(pair, true);
       updateTable();
     });
-  }
 
-  for (let featureEl of featureEls) {
     featureEl.addEventListener('click', () => {
-      moveButton(featureEl.id);
+      moveButton(pair, true);
       updateTable();
     });
   }
 }
 
+// Attach all of the event listeners when the page loads
 armSelectedFeatures();
 armUnselectedFeatures();
-document.getElementById('language')
-        .addEventListener('click', () => changeLanguage());
+document.getElementById('language').addEventListener('click', changeLanguage);
