@@ -137,56 +137,52 @@
 				document.getElementById("sign" + buttonId.slice(8)).style.display = '';
 			}
 		}
+
+/**
+ * Determines which features are currently active
+ *
+ * @return  An array of names of active features
+ */
+function parseActiveFeatures() {
+  var elements = document.getElementById("selectedFeatures").elements;
+  let activeFeatures = [];
+
+  for (let i = 0; i < elements.length; i += 2) {
+    let sign = elements[i];
+    let feature = elements[i+1];
+    let signText = "";
+
+    if (window.getComputedStyle(feature).display === "none") {
+      continue;
+    }
+
+    if (sign.firstChild.data === "+") {
+      signText = "plus";
+    } else if (sign.firstChild.data === "-") {
+      signText = "minus";
+    }
+
+    activeFeatures.push(signText + feature.value);
+  }
+
+  return activeFeatures;
+}
 		
-		function updateTable () {
-			var elements = document.getElementById("selectedFeatures").elements;
-			toFilter = [];
-			var newDisplayedSymbols = [];
-			
-			
-			for (var i = 0, element; element = elements[i++];) {
-				if (window.getComputedStyle(element).display === "none") {
-					continue;
-				}
-				if (element.firstChild.data === "+") {
-					lastSign = "plus";
-					continue;
-				}
-				if (element.firstChild.data === "-") {
-					lastSign = "minus";
-					continue;
-				}
-				toFilter.push(lastSign + element.value);
-				
-			}
-			
-			console.log(toFilter);
-			
-			var displayedSymbols = allSymbols;
-
-			for (i = 0; i < toFilter.length; i++) {
-			
-				newDisplayedSymbols = [];
-				
-				
-				for (x = 0; x < featuresObject[toFilter[i]].length; x++) {
-					console.log(String(featuresObject[toFilter[i]][x]));
-					console.log(displayedSymbols.includes(String(featuresObject[toFilter[i]][x])));
-					if (displayedSymbols.includes(String(featuresObject[toFilter[i]][x]))) {
-						newDisplayedSymbols.push(String(featuresObject[toFilter[i]][x]));
-						console.log(newDisplayedSymbols);
-					}
-				}
-				
-				displayedSymbols = newDisplayedSymbols;
-			
-
-				}
-
+/**
+ * Updates the table based on the selected features
+ */
+function updateTable() {
+  let displayedSymbols = allSymbols;
+  let activeFeatures = parseActiveFeatures();
+  let featureSets = activeFeatures.map(feature => featuresObject[feature]);
   let tables = document.getElementsByClassName('ipaTable');
 
+  for (let featureSet of featureSets) {
+    displayedSymbols = displayedSymbols.filter(symbol => featureSet.includes(symbol));
+  }
+
   for (let table of tables) {
-    if (toFilter.length > 0) {
+    if (activeFeatures.length > 0) {
       table.classList.add('highlight');
       let cells = table.getElementsByTagName('td');
 
