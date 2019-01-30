@@ -98,7 +98,7 @@ td.grey {
 	left: 750px;
 }
 
-td.noBorders {
+table.noBorders td {
 	
 	border: none;
 	
