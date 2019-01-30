@@ -265,271 +265,277 @@
 	
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-	<form id="unselectedFeatures">
-	<div class="featureGroup">	
-		<div class="Syllabic">
-				<button type="button" id="signSyllabic" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Syllabic" value="syllabic" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Syllabic</button>
-		</div>
-		<div class="Consonantal">
-				<button type="button" id="signConsonantal" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Consonantal" value="consonantal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Consonantal</button>
-		</div>	
-		<div class="Approximant">
-				<button type="button" id="signApproximant" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Approximant" value="approximant" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Approximant</button>
-		</div>		
-		<div class="Sonorant">
-				<button type="button" id="signSonorant" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Sonorant" value="sonorant" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Sonorant</button>
-		</div>
-	</div>
-	
-	
-	<div class="featureGroup">
-		<div class="Voiced">
-				<button type="button" id="signVoiced" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Voiced" value="voiced" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Voiced</button>
-		</div>
-		<div class="SpreadGlottis">
-				<button type="button" id="signSpreadGlottis" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="SpreadGlottis" value="spreadGlottis" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Spread Glottis</button>
-		</div>
-		<div class="ConstrictedGlottis">
-				<button type="button" id="signConstrictedGlottis" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="ConstrictedGlottis" value="constrictedGlottis" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Constricted Glottis</button>
-		</div>
-	</div>
-	
-	
-	<div class="featureGroup">
-		<div class="Continuant">
-				<button type="button" id="signContinuant" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Continuant" value="continuant" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Continuant</button>
-		</div>
-		<div class="Nasal">
-				<button type="button" id="signNasal" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Nasal" value="nasal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Nasal</button>
-		</div>
-		<div class="Strident">
-				<button type="button" id="signStrident" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Strident" value="strident" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Strident</button>
-		</div>
-		<div class="Lateral">
-				<button type="button" id="signLateral" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Lateral" value="lateral" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Lateral</button>
-		</div>	
-	</div>
-	
-	
-	<div class="featureGroup">
-		<div class="Labial">
-				<button type="button" id="signLabial" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Labial" value="labial" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Labial</button>
-		</div>
-		<div class="Round">
-				<button type="button" id="signRound" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Round" value="round" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Round</button>
-		</div>
-		<div class="Coronal">
-				<button type="button" id="signCoronal" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Coronal" value="coronal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Coronal</button>
-		</div>
-		<div class="Anterior">
-				<button type="button" id="signAnterior" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Anterior" value="anterior" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Anterior</button>
-		</div>
-		<div class="Distributed">
-				<button type="button" id="signDistributed" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Distributed" value="distributed" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Distributed</button>
-		</div>
-		</div>
-		
-		
-	<div class="featureGroup">
-		<div class="Dorsal">
-				<button type="button" id="signDorsal" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Dorsal" value="dorsal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Dorsal</button>
-		</div>
-		<div class="High">
-				<button type="button" id="signHigh" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="High" value="high" onclick="moveButton(this.id); addFeature(this.id); updateTable()">High</button>
-		</div>
-		<div class="Low">
-				<button type="button" id="signLow" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Low" value="low" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Low</button>
-		</div>
-		<div class="Back">
-				<button type="button" id="signBack" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Back" value="back" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Back</button>
-		</div>
-		<div class="Tense">
-				<button type="button" id="signTense" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Tense" value="tense" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Tense</button>
-		</div>
-		<div class="Pharyngeal">
-				<button type="button" id="signPharyngeal" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Pharyngeal" value="pharyngeal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Pharyngeal</button>
-		</div>
-		<div class="ATR">
-				<button type="button" id="signATR" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="ATR" value="advancedTongueRoot" onclick="moveButton(this.id); addFeature(this.id); updateTable()">ATR</button>
-		</div>
-		<div class="Glottal">
-				<button type="button" id="signGlottal" value="+" onclick="switchSign(this.id)">+</button>
-				<button type="button" id="Glottal" value="glottal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Glottal</button>
-		</div>
-	</div>
-	</form>
+    <section id="bottomSection">
+        <div class="controls">
+            <form id="unselectedFeatures">
+                <div class="featureGroup">	
+                    <div class="featurePair Syllabic">
+                            <button type="button" id="signSyllabic" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Syllabic" value="syllabic" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Syllabic</button>
+                    </div>
+                    <div class="featurePair Consonantal">
+                            <button type="button" id="signConsonantal" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Consonantal" value="consonantal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Consonantal</button>
+                    </div>	
+                    <div class="featurePair Approximant">
+                            <button type="button" id="signApproximant" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Approximant" value="approximant" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Approximant</button>
+                    </div>		
+                    <div class="featurePair Sonorant">
+                            <button type="button" id="signSonorant" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Sonorant" value="sonorant" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Sonorant</button>
+                    </div>
+                </div>
+                
+                
+                <div class="featureGroup">
+                    <div class="featurePair Voiced">
+                            <button type="button" id="signVoiced" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Voiced" value="voiced" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Voiced</button>
+                    </div>
+                    <div class="featurePair SpreadGlottis">
+                            <button type="button" id="signSpreadGlottis" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="SpreadGlottis" value="spreadGlottis" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Spread Glottis</button>
+                    </div>
+                    <div class="featurePair ConstrictedGlottis">
+                            <button type="button" id="signConstrictedGlottis" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="ConstrictedGlottis" value="constrictedGlottis" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Constricted Glottis</button>
+                    </div>
+                </div>
+                
+                
+                <div class="featureGroup">
+                    <div class="featurePair Continuant">
+                            <button type="button" id="signContinuant" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Continuant" value="continuant" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Continuant</button>
+                    </div>
+                    <div class="featurePair Nasal">
+                            <button type="button" id="signNasal" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Nasal" value="nasal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Nasal</button>
+                    </div>
+                    <div class="featurePair Strident">
+                            <button type="button" id="signStrident" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Strident" value="strident" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Strident</button>
+                    </div>
+                    <div class="featurePair Lateral">
+                            <button type="button" id="signLateral" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Lateral" value="lateral" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Lateral</button>
+                    </div>	
+                </div>
+                
+                
+                <div class="featureGroup">
+                    <div class="featurePair Labial">
+                            <button type="button" id="signLabial" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Labial" value="labial" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Labial</button>
+                    </div>
+                    <div class="featurePair Round">
+                            <button type="button" id="signRound" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Round" value="round" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Round</button>
+                    </div>
+                    <div class="featurePair Coronal">
+                            <button type="button" id="signCoronal" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Coronal" value="coronal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Coronal</button>
+                    </div>
+                    <div class="featurePair Anterior">
+                            <button type="button" id="signAnterior" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Anterior" value="anterior" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Anterior</button>
+                    </div>
+                    <div class="featurePair Distributed">
+                            <button type="button" id="signDistributed" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Distributed" value="distributed" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Distributed</button>
+                    </div>
+                    </div>
+                    
+                    
+                <div class="featureGroup">
+                    <div class="featurePair Dorsal">
+                            <button type="button" id="signDorsal" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Dorsal" value="dorsal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Dorsal</button>
+                    </div>
+                    <div class="featurePair High">
+                            <button type="button" id="signHigh" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="High" value="high" onclick="moveButton(this.id); addFeature(this.id); updateTable()">High</button>
+                    </div>
+                    <div class="featurePair Low">
+                            <button type="button" id="signLow" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Low" value="low" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Low</button>
+                    </div>
+                    <div class="featurePair Back">
+                            <button type="button" id="signBack" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Back" value="back" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Back</button>
+                    </div>
+                    <div class="featurePair Tense">
+                            <button type="button" id="signTense" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Tense" value="tense" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Tense</button>
+                    </div>
+                    <div class="featurePair Pharyngeal">
+                            <button type="button" id="signPharyngeal" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Pharyngeal" value="pharyngeal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Pharyngeal</button>
+                    </div>
+                    <div class="featurePair ATR">
+                            <button type="button" id="signATR" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="ATR" value="advancedTongueRoot" onclick="moveButton(this.id); addFeature(this.id); updateTable()">ATR</button>
+                    </div>
+                    <div class="featurePair Glottal">
+                            <button type="button" id="signGlottal" value="+" onclick="switchSign(this.id)">+</button>
+                            <button type="button" id="Glottal" value="glottal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Glottal</button>
+                    </div>
+                </div>
+            </form>
 
-	<br><br>
+            <br><br>
 
-	<button type="button" id="language" value=" " onclick="changeLanguage()">English</button>
+            <button type="button" id="language" value=" " onclick="changeLanguage()">English</button>
+        </div>
 
-	<img src="img/IPA_Vowels_Empty.png" alt="IPA Vowels Trapezium" id="trapezium">
+        <div id="vowelsWrapper">
+            <img src="img/IPA_Vowels_Empty.png" alt="IPA Vowels Trapezium" id="trapezium">
 
 
-	<table id="vowelsTable" class="ipaTable noBorders">
-		
-		<tr>
-			<td></td>
-			<td>i</td>
-			<td>y</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td class="rightErased">ɨ</td>
-			<td></td>
-			<td class="leftErased">ʉ</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>ɯ</td>
-			<td>u</td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>ɪ</td>
-			<td>ʏ</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>ʊ</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>	
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>e</td>
-			<td>ø</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td class="rightErased">ɘ</td>
-			<td></td>
-			<td class="leftErased">ɵ</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>ɤ</td>
-			<td>o</td>
-			<td></td>
-		</tr>	
-		
+            <table id="vowelsTable" class="ipaTable noBorders">
+                
+                <tr>
+                    <td></td>
+                    <td>i</td>
+                    <td>y</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="rightErased">ɨ</td>
+                    <td></td>
+                    <td class="leftErased">ʉ</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>ɯ</td>
+                    <td>u</td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>ɪ</td>
+                    <td>ʏ</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>ʊ</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+                <tr>	
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>e</td>
+                    <td>ø</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="rightErased">ɘ</td>
+                    <td></td>
+                    <td class="leftErased">ɵ</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>ɤ</td>
+                    <td>o</td>
+                    <td></td>
+                </tr>	
+                
 
-		
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td colspan="2">ə</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td class="rightErased">ɛ</td>
-			<td colspan="2">œ</td>
-			<td></td>
-			<td class="rightErased">ɜ</td>
-			<td></td>
-			<td class="leftErased">ɞ</td>
-			<td></td>
-			<td></td>
-			<td>ʌ</td>
-			<td>ɔ</td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td colspan="2">æ</td>
-			<td></td>
-			<td></td>
-			<td colspan="2">ɐ</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td class="rightErased">a</td>
-			<td></td>
-			<td class="leftErased">ɶ</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>ɑ</td>
-			<td>ɒ</td>
-			<td></td>
-		</tr>
-		
-	</table>
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2">ə</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="rightErased">ɛ</td>
+                    <td colspan="2">œ</td>
+                    <td></td>
+                    <td class="rightErased">ɜ</td>
+                    <td></td>
+                    <td class="leftErased">ɞ</td>
+                    <td></td>
+                    <td></td>
+                    <td>ʌ</td>
+                    <td>ɔ</td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2">æ</td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2">ɐ</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="rightErased">a</td>
+                    <td></td>
+                    <td class="leftErased">ɶ</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>ɑ</td>
+                    <td>ɒ</td>
+                    <td></td>
+                </tr>
+                
+            </table>
+        </div>
+    </section>
 
 	
 	

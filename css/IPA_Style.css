@@ -76,16 +76,28 @@ td.grey {
 	
 }
 
+.featureGroup .featurePair:not(:last-child) {
+    margin-right: 1em;
+}
+
+.featureGroup .featurePair button {
+    float: left;
+}
 
 
 
+#bottomSection {
+    display: flex;
+}
+
+.controls {
+    min-width: 750px;
+}
 
 #trapezium {
 	height: 250px;
 	width: 400px;
 	position: absolute;
-	top: 360px;
-	left: 750px;
 }
 
 #vowelsTable {
@@ -94,8 +106,6 @@ td.grey {
 	height: 250px;
 	width: 400px;
 	position: absolute;
-	top: 360px;
-	left: 750px;
 }
 
 table.noBorders td {
