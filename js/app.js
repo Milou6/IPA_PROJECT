@@ -1,4 +1,11 @@
 /**
+ * Will hold the data loaded from PHOIBLE
+ */
+var phoibleData;
+
+const phoibleURI = "/data/phoible-segments-features.tsv";
+
+/**
  * Switches the sign of a feature pair
  *
  * @param pair      The DOM reference to the feature pair element
@@ -34,24 +41,16 @@ function moveButton(pair, selected) {
  */
 function parseActiveFeatures() {
   let pairs = document.querySelectorAll("#selectedFeatures .featurePair");
-  let activeFeatures = [];
+  let activeFeatures = {};
 
   for (let pair of pairs) {
     let sign = pair.children[0];
-    let feature = pair.children[1];
-    let signText = "";
 
     if (window.getComputedStyle(pair).display === "none") {
       continue;
     }
 
-    if (sign.innerHTML === "+") {
-      signText = "plus";
-    } else if (sign.innerHTML === "-") {
-      signText = "minus";
-    }
-
-    activeFeatures.push(signText + pair.dataset.value);
+    activeFeatures[pair.dataset.value] = sign.innerHTML;
   }
 
   return activeFeatures;
@@ -63,17 +62,14 @@ function parseActiveFeatures() {
 function updateTable() {
   let displayedSymbols = allSymbols;
   let activeFeatures = parseActiveFeatures();
-  let featureSets = activeFeatures.map(feature => featuresObject[feature]);
   let tables = document.getElementsByClassName('ipaTable');
 
-  for (let featureSet of featureSets) {
-    if (featureSet) {
-      displayedSymbols = displayedSymbols.filter(symbol => featureSet.includes(symbol));
-    }
+  for (let [key, value] of Object.entries(activeFeatures)) {
+    displayedSymbols = displayedSymbols.filter(symbol => phoibleData[key][symbol] === value);
   }
 
   for (let table of tables) {
-    if (activeFeatures.length > 0) {
+    if (Object.keys(activeFeatures).length > 0) {
       table.classList.add('highlight');
       let cells = table.getElementsByTagName('td');
 
@@ -137,6 +133,44 @@ function changeLanguage() {
 }
 
 /**
+ * Loads a TSV file
+ *
+ * @param uri  The location of the file
+ * @return  A promise which resolves to a 2D array of data
+ */
+async function loadTSV(uri) {
+  let data = await fetch(uri);
+  let text = await data.text();
+  return text.split('\n').map(row => row.split('\t'));
+}
+
+/**
+ * Transforms a 2D array of feature data into a 2D object
+ *
+ * @param rawData  The data to convert
+ * @return  An object whose keys are features and values are objects whose
+ *          keys are symbols and values are feature values
+ */
+function transformFeatureData(rawData) {
+  featureData = {};
+  let [features, ...rows] = rawData;
+
+  for (let i = 1; i < features.length; i++) {
+    let feature = features[i];
+    let featureValues = {};
+
+    for (let row of rows) {
+      let symbol = row[0];
+      let value = row[i];
+      featureValues[symbol] = value;
+    }
+    featureData[feature] = featureValues;
+  }
+
+  return featureData;
+}
+
+/**
  * Attaches event listeners to all of the unselected features
  */
 function armUnselectedFeatures() {
@@ -175,7 +209,12 @@ function armSelectedFeatures() {
   }
 }
 
-// Attach all of the event listeners when the page loads
+// Load the PHOIBLE data
+loadTSV(phoibleURI)
+  .then(data => phoibleData = transformFeatureData(data))
+  .catch(err => console.error(err));
+
+// Attach all of the event listeners
 armSelectedFeatures();
 armUnselectedFeatures();
 document.getElementById('language').addEventListener('click', changeLanguage);
