@@ -107,3 +107,18 @@ td.noBorders {
 #tableDisplay tr.placeRow {
     text-transform: uppercase;
 }
+
+table.ipaTable td {
+    color: black;
+    font-weight: normal;
+}
+
+table.ipaTable.highlight td {
+    color: grey;
+    font-weight: lighter;
+}
+
+table.ipaTable.highlight td.highlight {
+    color: blue;
+    font-weight: bold;
+}

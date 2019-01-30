@@ -163,7 +163,7 @@
 			console.log(toFilter);
 			
 			var displayedSymbols = allSymbols;
-			
+
 			for (i = 0; i < toFilter.length; i++) {
 			
 				newDisplayedSymbols = [];
@@ -182,53 +182,27 @@
 			
 
 				}
- var table = document.getElementById('tableDisplay');										// Coloring the selected Table Cells
-    for (var r = 0, n = table.rows.length; r < n; r++) {
-        for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
-			if (table.rows[r].cells[c].innerHTML.length > 1) {
-				continue;
-			}
-            if (displayedSymbols.includes(table.rows[r].cells[c].innerHTML)) {
-				table.rows[r].cells[c].style.color = "blue";
-				table.rows[r].cells[c].style.fontWeight = "bold";
-			}
-			else {
-				table.rows[r].cells[c].style.color = "grey";
-				table.rows[r].cells[c].style.fontWeight = "lighter";
-			}
-			if (toFilter.length === 0) {
-				table.rows[r].cells[c].style.color = "black";
-				table.rows[r].cells[c].style.fontWeight = "normal";
-			}
-			console.log(table.rows[r].cells[c].innerHTML);
+
+  let tables = document.getElementsByClassName('ipaTable');
+
+  for (let table of tables) {
+    if (toFilter.length > 0) {
+      table.classList.add('highlight');
+      let cells = table.getElementsByTagName('td');
+
+      for (let cell of cells) {
+        if (displayedSymbols.includes(cell.innerHTML)) {
+          cell.classList.add("highlight");
+        } else {
+          cell.classList.remove('highlight');
         }
+      }
+    } else {
+      table.classList.remove('highlight');
     }
-	
- var table = document.getElementById('vowelsTable');										// Coloring the selected Table Cells
-    for (var r = 0, n = table.rows.length; r < n; r++) {
-        for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
-			if (table.rows[r].cells[c].innerHTML.length > 1) {
-				continue;
-			}
-            if (displayedSymbols.includes(table.rows[r].cells[c].innerHTML)) {
-				table.rows[r].cells[c].style.color = "blue";
-				table.rows[r].cells[c].style.fontWeight = "bold";
-			}
-			else {
-				table.rows[r].cells[c].style.color = "grey";
-				table.rows[r].cells[c].style.fontWeight = "lighter";
-			}
-			if (toFilter.length === 0) {
-				table.rows[r].cells[c].style.color = "black";
-				table.rows[r].cells[c].style.fontWeight = "normal";
-			}
-			console.log(table.rows[r].cells[c].innerHTML);
-        }
-    }
-		
-		
-		}
-		
+  }
+}
+
 /**
  * Sets the language of the app to *lang*
  *
