@@ -103,3 +103,7 @@ td.noBorders {
 	border: none;
 	
 }
+
+#tableDisplay tr.placeRow {
+    text-transform: uppercase;
+}
