@@ -3,7 +3,7 @@
  */
 var phoibleData;
 
-const phoibleURI = "/data/phoible-segments-features.tsv";
+const phoibleURI = "/IPA_PROJECT/data/phoible-segments-features.tsv";
 
 /**
  * Switches the sign of a feature pair
