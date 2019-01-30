@@ -12,7 +12,6 @@ function addFeature(featureId) {													//TO REMOVE........................
 
 
   //			console.log(toAdd);	
-  activeFeatures++;
 }
 
 function switchSign(buttonId) {
@@ -110,7 +109,9 @@ function updateTable() {
   let tables = document.getElementsByClassName('ipaTable');
 
   for (let featureSet of featureSets) {
-    displayedSymbols = displayedSymbols.filter(symbol => featureSet.includes(symbol));
+    if (featureSet) {
+      displayedSymbols = displayedSymbols.filter(symbol => featureSet.includes(symbol));
+    }
   }
 
   for (let table of tables) {
