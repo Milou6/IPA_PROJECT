@@ -176,3 +176,43 @@ function changeLanguage() {
 
   setLanguage(lang);
 }
+
+function armUnselectedFeatures() {
+  let pairs = document.getElementsByClassName('featurePair');
+
+  for (let pair of pairs) {
+    let [signEl, featureEl] = pair.children;
+
+    signEl.addEventListener('click', () => switchSign(signEl.id));
+
+    featureEl.addEventListener('click', () => {
+      moveButton(featureEl.id);
+      addFeature(featureEl.id);
+      updateTable();
+    });
+  }
+}
+
+function armSelectedFeatures() {
+  let signEls = document.querySelectorAll('#selectedFeatures .sign');
+  let featureEls = document.querySelectorAll('#selectedFeatures .selected');
+
+  for (let signEl of signEls) {
+    signEl.addEventListener('click', () => {
+      switchSign(signEl.id);
+      updateTable();
+    });
+  }
+
+  for (let featureEl of featureEls) {
+    featureEl.addEventListener('click', () => {
+      moveButton(featureEl.id);
+      updateTable();
+    });
+  }
+}
+
+armSelectedFeatures();
+armUnselectedFeatures();
+document.getElementById('language')
+        .addEventListener('click', () => changeLanguage());

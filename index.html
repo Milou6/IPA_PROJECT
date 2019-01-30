@@ -8,7 +8,6 @@
 	
 	<script type="text/javascript" src="js/symbols.js"></script>
     <script type="text/javascript" src="js/translation.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
 	</head>
   
 	<body>
@@ -180,83 +179,83 @@
  	<form id="selectedFeatures"> 
 		
 		<div class="clearfix">		
-                <button type="button" class="sign" id="selectedSignSyllabic" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedSyllabic" value="syllabic" onclick="moveButton(this.id); updateTable()" style="display: none;">Syllabic</button>
+                <button type="button" class="sign" id="selectedSignSyllabic" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedSyllabic" value="syllabic" style="display: none;">Syllabic</button>
 
-                <button type="button" class="sign" id="selectedSignConsonantal" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedConsonantal" value="consonantal" onclick="moveButton(this.id); updateTable()" style="display: none;">Consonantal</button>			
+                <button type="button" class="sign" id="selectedSignConsonantal" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedConsonantal" value="consonantal" style="display: none;">Consonantal</button>			
 
-                <button type="button" class="sign" id="selectedSignApproximant" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedApproximant" value="approximant" onclick="moveButton(this.id); updateTable()" style="display: none;">Approximant</button>	
+                <button type="button" class="sign" id="selectedSignApproximant" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedApproximant" value="approximant" style="display: none;">Approximant</button>	
 
-                <button type="button" class="sign" id="selectedSignSonorant" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedSonorant" value="sonorant" onclick="moveButton(this.id); updateTable()" style="display: none;">Sonorant</button>
-
-
-
-                <button type="button" class="sign" id="selectedSignVoiced" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedVoiced" value="voiced" onclick="moveButton(this.id); updateTable()" style="display: none;">Voiced</button>
-
-                <button type="button" class="sign" id="selectedSignSpreadGlottis" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedSpreadGlottis" value="spreadGlottis" onclick="moveButton(this.id); updateTable()" style="display: none;">Spread Glottis</button>
-
-                <button type="button" class="sign" id="selectedSignConstrictedGlottis" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedConstrictedGlottis" value="constrictedGlottis" onclick="moveButton(this.id); updateTable()" style="display: none;">Constricted Glottis</button>		
+                <button type="button" class="sign" id="selectedSignSonorant" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedSonorant" value="sonorant" style="display: none;">Sonorant</button>
 
 
 
-                <button type="button" class="sign" id="selectedSignContinuant" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedContinuant" value="continuant" onclick="moveButton(this.id); updateTable()" style="display: none;">Continuant</button>
+                <button type="button" class="sign" id="selectedSignVoiced" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedVoiced" value="voiced" style="display: none;">Voiced</button>
 
-                <button type="button" class="sign" id="selectedSignNasal" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedNasal" value="nasal" onclick="moveButton(this.id); updateTable()" style="display: none;">Nasal</button>
+                <button type="button" class="sign" id="selectedSignSpreadGlottis" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedSpreadGlottis" value="spreadGlottis" style="display: none;">Spread Glottis</button>
 
-                <button type="button" class="sign" id="selectedSignStrident" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedStrident" value="strident" onclick="moveButton(this.id); updateTable()" style="display: none;">Strident</button>
-
-                <button type="button" class="sign" id="selectedSignLateral" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedLateral" value="lateral" onclick="moveButton(this.id); updateTable()" style="display: none;">Lateral</button>
+                <button type="button" class="sign" id="selectedSignConstrictedGlottis" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedConstrictedGlottis" value="constrictedGlottis" style="display: none;">Constricted Glottis</button>		
 
 
 
-                <button type="button" class="sign" id="selectedSignLabial" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedLabial" value="labial" onclick="moveButton(this.id); updateTable()" style="display: none;">Labial</button>
+                <button type="button" class="sign" id="selectedSignContinuant" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedContinuant" value="continuant" style="display: none;">Continuant</button>
 
-                <button type="button" class="sign" id="selectedSignRound" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedRound" value="round" onclick="moveButton(this.id); updateTable()" style="display: none;">Round</button>
+                <button type="button" class="sign" id="selectedSignNasal" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedNasal" value="nasal" style="display: none;">Nasal</button>
 
-                <button type="button" class="sign" id="selectedSignCoronal" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedCoronal" value="coronal" onclick="moveButton(this.id); updateTable()" style="display: none;">Coronal</button>
+                <button type="button" class="sign" id="selectedSignStrident" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedStrident" value="strident" style="display: none;">Strident</button>
 
-                <button type="button" class="sign" id="selectedSignAnterior" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedAnterior" value="anterior" onclick="moveButton(this.id); updateTable()" style="display: none;">Anterior</button>
+                <button type="button" class="sign" id="selectedSignLateral" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedLateral" value="lateral" style="display: none;">Lateral</button>
 
-                <button type="button" class="sign" id="selectedSignDistributed" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedDistributed" value="distributed" onclick="moveButton(this.id); updateTable()" style="display: none;">Distributed</button>
 
-                <button type="button" class="sign" id="selectedSignDorsal" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedDorsal" value="dorsal" onclick="moveButton(this.id); updateTable()" style="display: none;">Dorsal</button>
 
-                <button type="button" class="sign" id="selectedSignHigh" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedHigh" value="high" onclick="moveButton(this.id); updateTable()" style="display: none;">High</button>
+                <button type="button" class="sign" id="selectedSignLabial" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedLabial" value="labial" style="display: none;">Labial</button>
 
-                <button type="button" class="sign" id="selectedSignLow" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedLow" value="low" onclick="moveButton(this.id); updateTable()" style="display: none;">Low</button>
+                <button type="button" class="sign" id="selectedSignRound" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedRound" value="round" style="display: none;">Round</button>
 
-                <button type="button" class="sign" id="selectedSignBack" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedBack" value="back" onclick="moveButton(this.id); updateTable()" style="display: none;">Back</button>
+                <button type="button" class="sign" id="selectedSignCoronal" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedCoronal" value="coronal" style="display: none;">Coronal</button>
 
-                <button type="button" class="sign" id="selectedSignTense" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedTense" value="tense" onclick="moveButton(this.id); updateTable()" style="display: none;">Tense</button>
+                <button type="button" class="sign" id="selectedSignAnterior" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedAnterior" value="anterior" style="display: none;">Anterior</button>
 
-                <button type="button" class="sign" id="selectedSignPharyngeal" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedPharyngeal" value="Pharyngeal" onclick="moveButton(this.id); updateTable()" style="display: none;">Pharyngeal</button>
+                <button type="button" class="sign" id="selectedSignDistributed" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedDistributed" value="distributed" style="display: none;">Distributed</button>
 
-                <button type="button" class="sign" id="selectedSignATR" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedATR" value="advancedTongueRoot" onclick="moveButton(this.id); updateTable()" style="display: none;">ATR</button>
+                <button type="button" class="sign" id="selectedSignDorsal" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedDorsal" value="dorsal" style="display: none;">Dorsal</button>
 
-                <button type="button" class="sign" id="selectedSignGlottal" value="+" onclick="switchSign(this.id); updateTable()" style="display: none;">+</button>
-                <button type="button" class="selected" id="selectedGlottal" value="Glottal" onclick="moveButton(this.id); updateTable()" style="display: none;">Glottal</button>
+                <button type="button" class="sign" id="selectedSignHigh" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedHigh" value="high" style="display: none;">High</button>
+
+                <button type="button" class="sign" id="selectedSignLow" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedLow" value="low" style="display: none;">Low</button>
+
+                <button type="button" class="sign" id="selectedSignBack" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedBack" value="back" style="display: none;">Back</button>
+
+                <button type="button" class="sign" id="selectedSignTense" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedTense" value="tense" style="display: none;">Tense</button>
+
+                <button type="button" class="sign" id="selectedSignPharyngeal" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedPharyngeal" value="Pharyngeal" style="display: none;">Pharyngeal</button>
+
+                <button type="button" class="sign" id="selectedSignATR" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedATR" value="advancedTongueRoot" style="display: none;">ATR</button>
+
+                <button type="button" class="sign" id="selectedSignGlottal" value="+" style="display: none;">+</button>
+                <button type="button" class="selected" id="selectedGlottal" value="Glottal" style="display: none;">Glottal</button>
 		
 		</div>
 	</form> 
@@ -270,123 +269,123 @@
             <form id="unselectedFeatures">
                 <div class="featureGroup">	
                     <div class="featurePair Syllabic">
-                            <button type="button" id="signSyllabic" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Syllabic" value="syllabic" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Syllabic</button>
+                            <button type="button" id="signSyllabic" value="+">+</button>
+                            <button type="button" id="Syllabic" value="syllabic">Syllabic</button>
                     </div>
                     <div class="featurePair Consonantal">
-                            <button type="button" id="signConsonantal" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Consonantal" value="consonantal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Consonantal</button>
+                            <button type="button" id="signConsonantal" value="+">+</button>
+                            <button type="button" id="Consonantal" value="consonantal">Consonantal</button>
                     </div>	
                     <div class="featurePair Approximant">
-                            <button type="button" id="signApproximant" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Approximant" value="approximant" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Approximant</button>
+                            <button type="button" id="signApproximant" value="+">+</button>
+                            <button type="button" id="Approximant" value="approximant">Approximant</button>
                     </div>		
                     <div class="featurePair Sonorant">
-                            <button type="button" id="signSonorant" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Sonorant" value="sonorant" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Sonorant</button>
+                            <button type="button" id="signSonorant" value="+">+</button>
+                            <button type="button" id="Sonorant" value="sonorant">Sonorant</button>
                     </div>
                 </div>
                 
                 
                 <div class="featureGroup">
                     <div class="featurePair Voiced">
-                            <button type="button" id="signVoiced" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Voiced" value="voiced" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Voiced</button>
+                            <button type="button" id="signVoiced" value="+">+</button>
+                            <button type="button" id="Voiced" value="voiced">Voiced</button>
                     </div>
                     <div class="featurePair SpreadGlottis">
-                            <button type="button" id="signSpreadGlottis" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="SpreadGlottis" value="spreadGlottis" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Spread Glottis</button>
+                            <button type="button" id="signSpreadGlottis" value="+">+</button>
+                            <button type="button" id="SpreadGlottis" value="spreadGlottis">Spread Glottis</button>
                     </div>
                     <div class="featurePair ConstrictedGlottis">
-                            <button type="button" id="signConstrictedGlottis" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="ConstrictedGlottis" value="constrictedGlottis" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Constricted Glottis</button>
+                            <button type="button" id="signConstrictedGlottis" value="+">+</button>
+                            <button type="button" id="ConstrictedGlottis" value="constrictedGlottis">Constricted Glottis</button>
                     </div>
                 </div>
                 
                 
                 <div class="featureGroup">
                     <div class="featurePair Continuant">
-                            <button type="button" id="signContinuant" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Continuant" value="continuant" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Continuant</button>
+                            <button type="button" id="signContinuant" value="+">+</button>
+                            <button type="button" id="Continuant" value="continuant">Continuant</button>
                     </div>
                     <div class="featurePair Nasal">
-                            <button type="button" id="signNasal" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Nasal" value="nasal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Nasal</button>
+                            <button type="button" id="signNasal" value="+">+</button>
+                            <button type="button" id="Nasal" value="nasal">Nasal</button>
                     </div>
                     <div class="featurePair Strident">
-                            <button type="button" id="signStrident" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Strident" value="strident" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Strident</button>
+                            <button type="button" id="signStrident" value="+">+</button>
+                            <button type="button" id="Strident" value="strident">Strident</button>
                     </div>
                     <div class="featurePair Lateral">
-                            <button type="button" id="signLateral" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Lateral" value="lateral" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Lateral</button>
+                            <button type="button" id="signLateral" value="+">+</button>
+                            <button type="button" id="Lateral" value="lateral">Lateral</button>
                     </div>	
                 </div>
                 
                 
                 <div class="featureGroup">
                     <div class="featurePair Labial">
-                            <button type="button" id="signLabial" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Labial" value="labial" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Labial</button>
+                            <button type="button" id="signLabial" value="+">+</button>
+                            <button type="button" id="Labial" value="labial">Labial</button>
                     </div>
                     <div class="featurePair Round">
-                            <button type="button" id="signRound" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Round" value="round" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Round</button>
+                            <button type="button" id="signRound" value="+">+</button>
+                            <button type="button" id="Round" value="round">Round</button>
                     </div>
                     <div class="featurePair Coronal">
-                            <button type="button" id="signCoronal" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Coronal" value="coronal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Coronal</button>
+                            <button type="button" id="signCoronal" value="+">+</button>
+                            <button type="button" id="Coronal" value="coronal">Coronal</button>
                     </div>
                     <div class="featurePair Anterior">
-                            <button type="button" id="signAnterior" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Anterior" value="anterior" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Anterior</button>
+                            <button type="button" id="signAnterior" value="+">+</button>
+                            <button type="button" id="Anterior" value="anterior">Anterior</button>
                     </div>
                     <div class="featurePair Distributed">
-                            <button type="button" id="signDistributed" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Distributed" value="distributed" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Distributed</button>
+                            <button type="button" id="signDistributed" value="+">+</button>
+                            <button type="button" id="Distributed" value="distributed">Distributed</button>
                     </div>
                     </div>
                     
                     
                 <div class="featureGroup">
                     <div class="featurePair Dorsal">
-                            <button type="button" id="signDorsal" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Dorsal" value="dorsal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Dorsal</button>
+                            <button type="button" id="signDorsal" value="+">+</button>
+                            <button type="button" id="Dorsal" value="dorsal">Dorsal</button>
                     </div>
                     <div class="featurePair High">
-                            <button type="button" id="signHigh" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="High" value="high" onclick="moveButton(this.id); addFeature(this.id); updateTable()">High</button>
+                            <button type="button" id="signHigh" value="+">+</button>
+                            <button type="button" id="High" value="high">High</button>
                     </div>
                     <div class="featurePair Low">
-                            <button type="button" id="signLow" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Low" value="low" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Low</button>
+                            <button type="button" id="signLow" value="+">+</button>
+                            <button type="button" id="Low" value="low">Low</button>
                     </div>
                     <div class="featurePair Back">
-                            <button type="button" id="signBack" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Back" value="back" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Back</button>
+                            <button type="button" id="signBack" value="+">+</button>
+                            <button type="button" id="Back" value="back">Back</button>
                     </div>
                     <div class="featurePair Tense">
-                            <button type="button" id="signTense" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Tense" value="tense" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Tense</button>
+                            <button type="button" id="signTense" value="+">+</button>
+                            <button type="button" id="Tense" value="tense">Tense</button>
                     </div>
                     <div class="featurePair Pharyngeal">
-                            <button type="button" id="signPharyngeal" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Pharyngeal" value="pharyngeal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Pharyngeal</button>
+                            <button type="button" id="signPharyngeal" value="+">+</button>
+                            <button type="button" id="Pharyngeal" value="pharyngeal">Pharyngeal</button>
                     </div>
                     <div class="featurePair ATR">
-                            <button type="button" id="signATR" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="ATR" value="advancedTongueRoot" onclick="moveButton(this.id); addFeature(this.id); updateTable()">ATR</button>
+                            <button type="button" id="signATR" value="+">+</button>
+                            <button type="button" id="ATR" value="advancedTongueRoot">ATR</button>
                     </div>
                     <div class="featurePair Glottal">
-                            <button type="button" id="signGlottal" value="+" onclick="switchSign(this.id)">+</button>
-                            <button type="button" id="Glottal" value="glottal" onclick="moveButton(this.id); addFeature(this.id); updateTable()">Glottal</button>
+                            <button type="button" id="signGlottal" value="+">+</button>
+                            <button type="button" id="Glottal" value="glottal">Glottal</button>
                     </div>
                 </div>
             </form>
 
             <br><br>
 
-            <button type="button" id="language" value=" " onclick="changeLanguage()">English</button>
+            <button type="button" id="language" value=" ">English</button>
         </div>
 
         <div id="vowelsWrapper">
@@ -542,6 +541,7 @@
 	<br> <br>
 	
 	
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 
  </html>
