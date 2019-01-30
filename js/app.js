@@ -15,7 +15,7 @@ function switchSign(pair, selected) {
 }
 
 /**
- * "Moves" a button from the unselected region to the selected region
+ * "Moves" a button from the unselected region to the selected region or vice versa
  *
  * @param pair      The DOM reference to the feature pair element
  * @param selected  True if the feature is currently selected, and false otherwise
