@@ -10,20 +10,19 @@ table, th, td {
 	text-align: center;
 }
 
-button.sign {
+#selectedFeatures button {
 	font-size: 25px;
-	margin-right: none;
-	border-right: none;
 	float: left;
-
 }
 
-button.selected {
-	font-size: 25px;
+#selectedFeatures button.sign {
+	margin-right: none;
+	border-right: none;
+}
+
+#selectedFeatures button.feature {
 	margin-right: 10px;
 	border-right: 10px;
-	float: left;
-
 }
 
 #selectedFeatures {
@@ -76,16 +75,32 @@ td.grey {
 	
 }
 
+.featureGroup .featurePair:not(:last-child) {
+    margin-right: 1em;
+}
+
+.featureGroup .featurePair button {
+    float: left;
+}
+
+#selectedFeatures .featurePair {
+    display: none;
+}
 
 
 
+#bottomSection {
+    display: flex;
+}
+
+.controls {
+    min-width: 750px;
+}
 
 #trapezium {
 	height: 250px;
 	width: 400px;
 	position: absolute;
-	top: 360px;
-	left: 750px;
 }
 
 #vowelsTable {
@@ -94,12 +109,29 @@ td.grey {
 	height: 250px;
 	width: 400px;
 	position: absolute;
-	top: 360px;
-	left: 750px;
 }
 
-td.noBorders {
+table.noBorders td {
 	
 	border: none;
 	
+}
+
+#tableDisplay tr.placeRow {
+    text-transform: uppercase;
+}
+
+table.ipaTable td {
+    color: black;
+    font-weight: normal;
+}
+
+table.ipaTable.highlight td {
+    color: grey;
+    font-weight: lighter;
+}
+
+table.ipaTable.highlight td.highlight {
+    color: blue;
+    font-weight: bold;
 }

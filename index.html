@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+        <meta charset="utf-8">
+        <title>Interactive IPA Chart</title>
+        <link rel="stylesheet" type="text/css" href="css/IPA_Style.css">
+        
+        <script type="text/javascript" src="js/symbols.js"></script>
+        <script type="text/javascript" src="js/translation.js"></script>
+	</head>
+  
+	<body>
+        <table id="tableDisplay" class="ipaTable">
+            <tr class="placeRow">
+                <th></th>
+                <th colspan="4" data-value="labial">LABIAL</th>
+                <th colspan="8" data-value="coronal">CORONAL</th>
+                <th colspan="8" data-value="dorsal">DORSAL</th>
+                <th colspan="4" data-value="radical">RADICAL</th>
+                <th colspan="2" data-value="laryngeal">LARYNGEAL</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th colspan="2" data-value="bilabial">Bilabial</th>
+                <th colspan="2" data-value="labiodental">Labio-dental</th>
+                <th colspan="2" data-value="dental">Dental</th>
+                <th colspan="2" data-value="alveolar">Alveolar</th>
+                <th colspan="2" data-value="palatoalveolar">Palato-Alveolar</th>
+                <th colspan="2" data-value="retroflex">Retroflex</th>
+                <th colspan="2" data-value="alveolopalatal">Alveolo-palatal</th>
+                <th colspan="2" data-value="palatal">Palatal</th>
+                <th colspan="2" data-value="velar">Velar</th>
+                <th colspan="2" data-value="uvular">Uvular</th>
+                <th colspan="2" data-value="pharyngeal">Pharyngeal</th>
+                <th colspan="2" data-value="epiglottal">Epi-glottal</th>
+                <th colspan="2" data-value="glottal">Glottal</th>
+            </tr>
+            <tr>
+                <th class="test" data-value="nasal">Nasal</th>
+                <td class="rightErased"> </td>
+                <td class="leftErased">m</td>
+                <td class="rightErased"> </td>
+                <td class="leftErased">ɱ</td>
+                <td colspan="6">n</td>
+                <td colspan="2">ɳ</td>
+                <td colspan="4">ɲ</td>
+                <td colspan="2">ŋ</td>
+                <td colspan="2">ɴ</td>
+                <td class="grey" colspan="6"> </td>			
+            </tr>
+            <tr>
+                <th class="test" data-value="plosive">Plosive</th>
+                <td class="rightErased">p</td>
+                <td class="leftErased">b</td>
+                <td class="rightErased"> </td>
+                <td class="leftErased"> </td>
+                <td colspan="4" class="rightErased">t</td>
+                <td colspan="2" class="leftErased">d</td>
+                <td class="rightErased">ʈ</td>
+                <td class="leftErased">ɖ</td>
+                <td class="rightErased" colspan="2">c</td>
+                <td class="leftErased" colspan="2">ɟ</td>
+                <td class="rightErased">k</td>
+                <td class="leftErased">g</td>
+                <td class="rightErased">q</td>
+                <td class="leftErased">ɢ</td>
+                <td class="grey" colspan="2"> </td>
+                <td colspan="2">ʡ</td>
+                <td>ʔ</td>
+                <td class="grey"> </td>			
+            </tr>
+            <tr>
+                <th class="test" data-value="fricative">Fricative</th>
+                <td class="rightErased">ɸ</td>
+                <td class="leftErased">β</td>
+                <td class="rightErased">f</td>
+                <td class="leftErased">v</td>
+                <td class="rightErased">θ</td>
+                <td class="leftErased">ð</td>
+                <td class="rightErased">s</td>
+                <td class="leftErased">z</td>
+                <td class="rightErased">ʃ</td>
+                <td class="leftErased">ʒ</td>
+                <td class="rightErased">ʂ</td>
+                <td class="leftErased">ʐ</td>
+                <td class="rightErased">ɕ</td>
+                <td class="leftErased">ʑ</td>
+                <td class="rightErased">ç</td>
+                <td class="leftErased">ʝ</td>
+                <td class="rightErased">x</td>
+                <td class="leftErased">ɣ</td>
+                <td class="rightErased">χ</td>
+                <td  class="leftErased" rowspan="2">ʁ</td>
+                <td class="rightErased">ħ</td>
+                <td  class="leftErased" rowspan="2">ʕ</td>
+                <td class="rightErased">ʜ</td>
+                <td  class="leftErased" rowspan="2">ʢ</td>
+                <td  class="rightErased" rowspan="2">h</td>
+                <td  class="leftErased" rowspan="2">ɦ</td>			
+            </tr>
+            <tr>
+                <th class="test" data-value="approximant">Approximant</th>
+                <td class="rightErased"> </td>
+                <td class="leftErased"> </td>
+                <td class="rightErased"> </td>
+                <td class="leftErased">ʋ</td>
+                <td colspan="6">ɹ</td>
+                <td colspan="2">ɻ</td>
+                <td colspan="4">j</td>
+                <td colspan="2">ɰ</td>
+                <td class="rightErased"> </td>
+                <td class="rightErased leftErased"> </td>
+                <td class="leftErased rightErased"> </td>
+            </tr>
+            <tr>
+                <th class="test" data-value="tap">Tap, Flap</th>
+                <td class="rightErased"> </td>
+                <td class="leftErased"> </td>
+                <td class="rightErased"> </td>
+                <td class="leftErased">ⱱ</td>
+                <td colspan="6">ɾ</td>
+                <td colspan="2">ɽ</td>
+                <td colspan="4"> </td>
+                <td class="grey" colspan="2" rowspan="2"> </td>
+                <td colspan="2"> </td>
+                <td class="grey" colspan="2" rowspan="5"> </td>
+                <td colspan="2"> </td>
+                <td class="grey" colspan="2" rowspan="5"> </td>			
+            </tr>
+            <tr>
+                <th data-value="trill">Trill</th>
+                <td class="rightErased"> </td>
+                <td class="leftErased">ʙ</td>
+                <td class="rightErased"> </td>
+                <td class="leftErased"> </td>
+                <td colspan="6">r</td>
+                <td colspan="2"> </td>
+                <td colspan="4"> </td>
+                <td colspan="2">ʀ</td>
+                <td colspan="2"> </td>	
+            </tr>
+            <tr>
+                <th data-value="lateralFricative">Lateral fricative</th>
+                <td class="grey" rowspan="3" colspan="4"> </td>
+                <td colspan="4" class="rightErased">ɬ</td>
+                <td colspan="2" class="leftErased">ɮ</td>
+                <td colspan="2"> </td>
+                <td colspan="4"> </td>
+                <td colspan="2"> </td>
+                <td colspan="2"> </td>
+                <td class="grey" colspan="2" rowspan="3"> </td>
+            </tr>
+            <tr>
+                <th data-value="lateralApproximant">Lateral approximant</th>
+                <td colspan="6">l</td>
+                <td colspan="2">ɭ</td>
+                <td colspan="4">ʎ</td>
+                <td colspan="2">ʟ</td>
+                <td colspan="2"> </td>
+            </tr>
+            <tr>
+                <th data-value="lateralFlap">Lateral flap</th>
+                <td colspan="6">ɺ</td>
+                <td colspan="2"> </td>
+                <td colspan="4"> </td>
+                <td colspan="2"> </td>
+                <td colspan="2"> </td>
+            </tr>
+        </table>
+	
+	
+        <br><br>
+	
+        <form id="selectedFeatures"> 
+            <div class="clearfix">		
+                <div class="featurePair" data-value="syllabic">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Syllabic</button>
+                </div>
+                <div class="featurePair" data-value="consonantal">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Consonantal</button>            
+                </div>
+                <div class="featurePair" data-value="approximant">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Approximant</button>    
+                </div>
+                <div class="featurePair" data-value="sonorant">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Sonorant</button>
+                </div>
+
+                <div class="featurePair" data-value="voiced">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Voiced</button>
+                </div>
+                <div class="featurePair" data-value="spreadGlottis">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Spread Glottis</button>
+                </div>
+                <div class="featurePair" data-value="constrictedGlottis">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Constricted Glottis</button>        
+                </div>
+
+                <div class="featurePair" data-value="continuant">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Continuant</button>
+                </div>
+                <div class="featurePair" data-value="nasal">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Nasal</button>
+                </div>
+                <div class="featurePair" data-value="strident">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Strident</button>
+                </div>
+                <div class="featurePair" data-value="lateral">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Lateral</button>
+                </div>
+
+                <div class="featurePair" data-value="labial">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Labial</button>
+                </div>
+                <div class="featurePair" data-value="round">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Round</button>
+                </div>
+                <div class="featurePair" data-value="coronal">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Coronal</button>
+                </div>
+                <div class="featurePair" data-value="anterior">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Anterior</button>
+                </div>
+                <div class="featurePair" data-value="distributed">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Distributed</button>
+                </div>
+
+                <div class="featurePair" data-value="dorsal">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Dorsal</button>
+                </div>
+                <div class="featurePair" data-value="high">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">High</button>
+                </div>
+                <div class="featurePair" data-value="low">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Low</button>
+                </div>
+                <div class="featurePair" data-value="back">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Back</button>
+                </div>
+                <div class="featurePair" data-value="tense">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Tense</button>
+                </div>
+                <div class="featurePair" data-value="pharyngeal">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Pharyngeal</button>
+                </div>
+                <div class="featurePair" data-value="advancedTongueRoot">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">ATR</button>
+                </div>
+                <div class="featurePair" data-value="glottal">
+                    <button type="button" class="sign">+</button>
+                    <button type="button" class="feature">Glottal</button>
+                </div>
+            </div>
+        </form> 
+	
+        <br><br>
+	
+        <!------------------------------------------------------------------------------->
+
+        <section id="bottomSection">
+            <div class="controls">
+                <form id="unselectedFeatures">
+                    <div class="featureGroup">	
+                        <div class="featurePair" data-value="syllabic">
+                            <button type="button">+</button>
+                            <button type="button">Syllabic</button>
+                        </div>
+                        <div class="featurePair" data-value="consonantal">
+                            <button type="button">+</button>
+                            <button type="button">Consonantal</button>
+                        </div>	
+                        <div class="featurePair" data-value="approximant">
+                            <button type="button">+</button>
+                            <button type="button">Approximant</button>
+                        </div>		
+                        <div class="featurePair" data-value="sonorant">
+                            <button type="button">+</button>
+                            <button type="button">Sonorant</button>
+                        </div>
+                    </div>
+
+                    <div class="featureGroup">
+                        <div class="featurePair" data-value="voiced">
+                            <button type="button">+</button>
+                            <button type="button">Voiced</button>
+                        </div>
+                        <div class="featurePair" data-value="spreadGlottis">
+                            <button type="button">+</button>
+                            <button type="button">Spread Glottis</button>
+                        </div>
+                        <div class="featurePair" data-value="constrictedGlottis">
+                            <button type="button">+</button>
+                            <button type="button">Constricted Glottis</button>
+                        </div>
+                    </div>
+
+                    <div class="featureGroup">
+                        <div class="featurePair" data-value="continuant">
+                            <button type="button">+</button>
+                            <button type="button">Continuant</button>
+                        </div>
+                        <div class="featurePair" data-value="nasal">
+                            <button type="button">+</button>
+                            <button type="button">Nasal</button>
+                        </div>
+                        <div class="featurePair" data-value="strident">
+                            <button type="button">+</button>
+                            <button type="button">Strident</button>
+                        </div>
+                        <div class="featurePair" data-value="lateral">
+                            <button type="button">+</button>
+                            <button type="button">Lateral</button>
+                        </div>	
+                    </div>
+
+                    <div class="featureGroup">
+                        <div class="featurePair" data-value="labial">
+                            <button type="button">+</button>
+                            <button type="button">Labial</button>
+                        </div>
+                        <div class="featurePair" data-value="round">
+                            <button type="button">+</button>
+                            <button type="button">Round</button>
+                        </div>
+                        <div class="featurePair" data-value="coronal">
+                            <button type="button">+</button>
+                            <button type="button">Coronal</button>
+                        </div>
+                        <div class="featurePair" data-value="anterior">
+                            <button type="button">+</button>
+                            <button type="button">Anterior</button>
+                        </div>
+                        <div class="featurePair" data-value="distributed">
+                            <button type="button">+</button>
+                            <button type="button">Distributed</button>
+                        </div>
+                    </div>
+
+                    <div class="featureGroup">
+                        <div class="featurePair" data-value="dorsal">
+                            <button type="button">+</button>
+                            <button type="button">Dorsal</button>
+                        </div>
+                        <div class="featurePair" data-value="high">
+                            <button type="button">+</button>
+                            <button type="button">High</button>
+                        </div>
+                        <div class="featurePair" data-value="low">
+                            <button type="button">+</button>
+                            <button type="button">Low</button>
+                        </div>
+                        <div class="featurePair" data-value="back">
+                            <button type="button">+</button>
+                            <button type="button">Back</button>
+                        </div>
+                        <div class="featurePair" data-value="tense">
+                            <button type="button">+</button>
+                            <button type="button">Tense</button>
+                        </div>
+                        <div class="featurePair" data-value="pharyngeal">
+                            <button type="button">+</button>
+                            <button type="button">Pharyngeal</button>
+                        </div>
+                        <div class="featurePair" data-value="advancedTongueRoot">
+                            <button type="button">+</button>
+                            <button type="button">ATR</button>
+                        </div>
+                        <div class="featurePair" data-value="glottal">
+                            <button type="button">+</button>
+                            <button type="button">Glottal</button>
+                        </div>
+                    </div>
+                </form>
+                <br><br>
+                <button type="button" id="language">English</button>
+            </div>
+
+            <div id="vowelsWrapper">
+                <img src="img/IPA_Vowels_Empty.png" alt="IPA Vowels Trapezium" id="trapezium">
+                <table id="vowelsTable" class="ipaTable noBorders">
+                    <tr>
+                        <td></td>
+                        <td>i</td>
+                        <td>y</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="rightErased">ɨ</td>
+                        <td></td>
+                        <td class="leftErased">ʉ</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>ɯ</td>
+                        <td>u</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>ɪ</td>
+                        <td>ʏ</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>ʊ</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>	
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>e</td>
+                        <td>ø</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="rightErased">ɘ</td>
+                        <td></td>
+                        <td class="leftErased">ɵ</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>ɤ</td>
+                        <td>o</td>
+                        <td></td>
+                    </tr>	
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="2">ə</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="rightErased">ɛ</td>
+                        <td colspan="2">œ</td>
+                        <td></td>
+                        <td class="rightErased">ɜ</td>
+                        <td></td>
+                        <td class="leftErased">ɞ</td>
+                        <td></td>
+                        <td></td>
+                        <td>ʌ</td>
+                        <td>ɔ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="2">æ</td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="2">ɐ</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="rightErased">a</td>
+                        <td></td>
+                        <td class="leftErased">ɶ</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>ɑ</td>
+                        <td>ɒ</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+	
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+ </html>
