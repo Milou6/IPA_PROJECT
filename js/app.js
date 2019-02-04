@@ -6,14 +6,14 @@ var phoibleData;
 /**
  * The location of the data directory
  */
-var dataDir = "/data";
+var dataDir = "/data/";
 
 // Pages hosted through GitHub pages need the repo name as the root directory.
 if (window.location.href.match(/github\.io/)) {
-  dataDir = '/IPA_PROJECT/' + dataDir;
+  dataDir = '/IPA_PROJECT' + dataDir;
 }
 
-const phoibleURI = dataDir + "/phoible-segments-features.tsv";
+const phoibleURI = dataDir + "phoible-segments-features.tsv";
 
 /**
  * Switches the sign of a feature pair
