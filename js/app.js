@@ -3,7 +3,17 @@
  */
 var phoibleData;
 
-const phoibleURI = "/IPA_PROJECT/data/phoible-segments-features.tsv";
+/**
+ * The location of the data directory
+ */
+var dataDir = "/data/";
+
+// Pages hosted through GitHub pages need the repo name as the root directory.
+if (window.location.href.match(/github\.io/)) {
+  dataDir = '/IPA_PROJECT' + dataDir;
+}
+
+const phoibleURI = dataDir + "phoible-segments-features.tsv";
 
 /**
  * Switches the sign of a feature pair
